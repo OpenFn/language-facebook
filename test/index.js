@@ -39,29 +39,3 @@ describe("execute", () => {
 
   })
 })
-
-describe("post", () => {
-
-  before(() => {
-    nock('https://fake.server.com').post('/api').reply(200, {foo: 'bar'});
-  })
-
-  it("calls the callback", () => {
-    let state = {
-      configuration: {
-        username: "hello",
-        password: "there"
-      }
-    };
-
-    return execute(post({
-      "url": "https://fake.server.com/api",
-      "headers": null,
-      "body": {"a": 1}
-    }))(state).then((state) => {
-      let responseBody = state.response.body
-      // Check that the post made it's way to the request as a string.
-      expect(responseBody).to.eql({foo: 'bar'})
-    })
-  })
-})
