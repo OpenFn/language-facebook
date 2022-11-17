@@ -5,15 +5,16 @@ Language Pack for building expressions and operations to interact with the Faceb
 
 Documentation
 -------------
-## postMessage
 
-#### sample configuration
+## sample configuration
+
 ```json
 {
   "accessToken": "yOuR-aCcEsS-tOkEn",
 }
 ```
 
+## postMessage
 #### sample expression using operation
 ```js
 postMessage({
